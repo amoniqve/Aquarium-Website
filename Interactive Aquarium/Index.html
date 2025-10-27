@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Save the Sea - Interactive Aquarium</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🌊 Save the Sea: Interactive Aquarium 🌊</h1>
+    <nav>
+      <ul>
+        <li><a href="#aquarium">Aquarium</a></li>
+        <li><a href="#threats">Ocean Threats</a></li>
+        <li><a href="#help">How to Help</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Aquarium fishies-->
+    <section id="aquarium" class="section">
+      <h2>Explore the Aquarium</h2>
+      <div class="aquarium-container">
+        <img src="media/images/clownfish.png" alt="Clownfish" class="fish swim-sideways" data-fact="Clownfish live in sea anemones and form symbiotic relationships!" style="top: 50px; left: 15%;" />
+        <img src="media/images/turtle.gif" alt="Sea Turtle" class="fish" data-fact="Sea turtles often mistake plastic for jellyfish." style="top: 70px; left: 35%;" />
+        <img src="media/images/octopus.gif" alt="Octopus" class="fish float-up-down" data-fact="Octopuses have three hearts and are masters of camouflage." style="top: 100px; left: 10%;" />
+        <img src="media/images/bluewhale.gif" alt="Blue Whale" class="fish swim-sideways" data-fact="The blue whale is the largest animal ever to live on Earth!" style="top: 250px; left: 40%;" />
+        <img src="media/images/shark.gif" alt="Shark" class="fish" data-fact="Sharks have been around longer than dinosaurs." style="top: 120px; left: 75%;" />
+        <img src="media/images/jellyfish.gif" alt="Jellyfish" class="fish float-up-down" data-fact="Jellyfish have been drifting through oceans for over 500 million years." style="top: 180px; left: 30%;" />
+        <img src="media/images/mantaray.gif" alt="Manta Ray" class="fish" data-fact="Manta rays are gentle giants that can grow up to 23 feet wide!" style="top: 220px; left: 55%;" />
+        <img src="media/images/seahorse.gif" alt="Seahorse" class="fish float-up-down" data-fact="Male seahorses carry and give birth to babies!" style="top: 160px; left: 70%;" />
+       <!-- Tank bubbles-->
+    <div class="bubble" style="left: 20%; animation-delay: 0s;"></div>
+    <div class="bubble" style="left: 40%; animation-delay: 2s;"></div>
+    <div class="bubble" style="left: 60%; animation-delay: 1s;"></div>
+    <div class="bubble" style="left: 80%; animation-delay: 3s;"></div>
+    <div class="bubble" style="left: 50%; animation-delay: 1.5s;"></div>
+    <div class="bubble tank-bubble" style="left: 5%; animation-delay: 0s;"></div>
+<div class="bubble tank-bubble" style="left: 15%; animation-delay: 1s;"></div>
+<div class="bubble tank-bubble" style="left: 25%; animation-delay: 2s;"></div>
+<div class="bubble tank-bubble" style="left: 35%; animation-delay: 3s;"></div>
+<div class="bubble tank-bubble" style="left: 45%; animation-delay: 4s;"></div>
+<div class="bubble tank-bubble" style="left: 55%; animation-delay: 2.5s;"></div>
+<div class="bubble tank-bubble" style="left: 65%; animation-delay: 1.5s;"></div>
+<div class="bubble tank-bubble" style="left: 75%; animation-delay: 3.5s;"></div>
+<div class="bubble tank-bubble" style="left: 85%; animation-delay: 0.5s;"></div>
+<div class="bubble tank-bubble" style="left: 95%; animation-delay: 2s;"></div>
+
+        <div id="fact-box"></div>
+      </div>
+    </section>
+
+    <!-- Ocean Threats S-->
+    <section id="threats" class="section">
+      <h2>Ocean Threats</h2>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-front">
+            <h3 class="card-title">Plastic Pollution</h3>
+          </div>
+          <div class="card-back">Plastic bags can be deadly when mistaken for food by marine animals.</div>
+        </div>
+        <div class="card">
+          <div class="card-front">
+            <h3 class="card-title">Oil Spills</h3>
+          </div>
+          <div class="card-back">Oil coats marine animals' fur and feathers, harming their insulation and buoyancy.</div>
+        </div>
+        <div class="card">
+          <div class="card-front">
+            <h3 class="card-title">Climate change</h3>
+          </div>
+          <div class="card-back">Warming waters bleach coral reefs and disrupt ocean ecosystems.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Help  -->
+    <section id="help" class="section">
+      <h2>How You Can Help</h2>
+      <ul class="tips">
+        <li class="title-item">Use reusable bags, bottles, and straws 🌱</li>
+        
+        <li>
+          <button class="accordion">Support marine conservation groups 🐬</button>
+          <div class="panel">
+            <p>Here are some awesome organizations you can check out:</p>
+            <ul>
+              <li><a href="https://oceana.org/" target="_blank">Oceana</a></li>
+              <li><a href="https://www.sealegacy.org/" target="_blank">SeaLegacy</a></li>
+              <li><a href="https://www.oceanconservancy.org/" target="_blank">Ocean Conservancy</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li class="title-item">Eat sustainable seafood 🐟</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Save the Sea Project. Built with 💙 and code.</p>
+  </footer> 
+
+  <script src="js/script.js"></script>
+  <audio id="fish-sound" src="Media/Audio/fish-click.mp3" preload="auto"></audio>
+  <audio id="ambient-sound" src="Media/Audio/ambient-sound.mp3" autoplay loop preload="auto"></audio>
+
+  <button id="start-sound">Play Music</button>
+
+  <script>
+  document.getElementById('start-sound').addEventListener('click', () => {
+    const ambientSound = document.getElementById('ambient-sound');
+    
+    ambientSound.play().catch(error => {
+      console.error("Error playing background sound:", error);
+    });
+  
+  
+    ambientSound.volume = 0.3; // VOLUME
+  });
+  </script>
+
+ <script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const quizAnswers = document.querySelectorAll('.quiz-answer');
+    
+    quizAnswers.forEach(button => {
+      button.addEventListener('click', function () {
+        const feedback = this.closest('.quiz-question').querySelector('.quiz-feedback');
+        const correct = this.dataset.correct === 'true';
+        
+        if (correct) {
+          feedback.textContent = 'Correct! 🌟';
+          feedback.style.color = 'green';
+        } else {
+          feedback.textContent = 'Oops! Try again. 🚫';
+          feedback.style.color = 'red';
+        }
+        
+        this.closest('ul').querySelectorAll('button').forEach(btn => btn.disabled = true);
+      });
+    });
+  });
+</script>
+ 
+</body>
+</html>

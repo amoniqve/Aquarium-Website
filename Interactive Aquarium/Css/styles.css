@@ -1,0 +1,300 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0a192f;
+    color: #e0f7fa;
+    overflow-x: hidden;
+    position: relative;
+}
+
+header {
+    background-color: #02243a;
+    padding: 1rem;
+    text-align: center;
+    color: #b2fef7;
+    border-bottom: 2px solid #01a9b4;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+nav a {
+    color: #76e3ea;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+/* Aquarium area */
+.aquarium-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to bottom, #021a27, #012c42);
+    overflow: hidden;
+    border: 2px solid #017892;
+    border-radius: 12px;
+}
+
+/* Fish Animations */
+.fish {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes floatUpDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+
+.fish.float-up-down {
+    animation-name: floatUpDown;
+    animation-duration: 4s;
+}
+
+
+@keyframes swimSideways {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(500px); }
+}
+
+.fish.swim-sideways {
+    animation-name: swimSideways;
+    animation-duration: 6s;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+.fish.shark,
+.fish.whale,
+.fish.mantaray {
+    width: 200px;
+}
+
+#fact-box {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #aaf2fc;
+}
+
+/* BUBBLESS */
+@keyframes bubble {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-600px); opacity: 0; }
+}
+
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: bubble 8s infinite ease-in;
+}
+
+/* Ocean Threat flip Cards */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    position: relative;
+}
+
+.card-front,
+.card-back {
+    background-color: #033544;
+    color: #b2fef7;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    transition: transform 0.6s;
+}
+
+.card-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-back {
+    transform: rotateY(360deg);
+}
+
+/* Tips Section */
+.tips {
+    list-style: none;
+    padding: 0;
+    margin: 2rem auto;
+    max-width: 500px;
+}
+
+.tips li {
+    margin: 1rem 0;
+    background: #012c42;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 255, 255, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #02243a;
+    color: #64ffda;
+    font-size: 0.9rem;
+}
+
+
+.fish.octopus {
+    width: 70px !important; 
+    animation-name: floatUpDownSmall;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+
+@keyframes floatUpDownSmall {
+    0% { transform: translateY(0) scale(0.7); }
+    50% { transform: translateY(-50px) scale(0.7); }
+    100% { transform: translateY(0) scale(0.7); }
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+.card-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  color: #64ffda;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.expandable {
+    cursor: pointer;
+    background: #013549;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: background 0.3s;
+  }
+  
+  .expandable:hover {
+    background: #024f66;
+  }
+  
+  .expand-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: block;
+    color: #aaf2fc; 
+    background: none !important;
+    user-select: none;
+  }
+  
+  .expand-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    margin-top: 0.5rem;
+  }
+  
+  .expandable.active .expand-content {
+    max-height: 500px; 
+    opacity: 1;
+  }
+  
+  .expand-content a {
+    color: #aaf2fc;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  .expand-content a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ffff;
+  }
+ 
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    padding: 0 1rem; 
+  }
+  
+  .accordion.active + .panel {
+    max-height: 500px; 
+    padding: 1rem;  
+  }
+  /* Accordion Button */
+  .accordion {
+    background: none;
+    color: #aaf2fc;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    width: 100%;
+    text-align: center; 
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+  
+  .accordion:hover {
+    background-color: #024f66;
+  }
+  
+  .accordion:focus {
+    outline: none;
+  }
+  .title-item {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #aaf2fc;
+    text-align: center;
+    font-family: inherit;
+  }
